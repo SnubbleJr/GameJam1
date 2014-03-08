@@ -122,6 +122,7 @@ public class ShooterBehaviour : MonoBehaviour {
 
 	public void animateShot()
 	{
-		gunmodel.animation.Play();
+		gunmodel.animation.Play("Fire");
 	}
+
 }

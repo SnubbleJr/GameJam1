@@ -38,6 +38,9 @@ public class GunBehaviour : MonoBehaviour {
 		{
 			activateShooter();
 		}
+		else{
+			findShooter();
+		}
 	}
 	void OnGUI() {
 
@@ -48,7 +51,7 @@ public class GunBehaviour : MonoBehaviour {
 
 		if (networkView.isMine)
 		{
-			transform.localPosition = Vector3.zero;
+			transform.localPosition = Vector3.forward;
 			InputMovement();
 		}
 		

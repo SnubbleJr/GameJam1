@@ -5,9 +5,11 @@ public class OutComeBehaviour : MonoBehaviour {
 
 	enum choices
 	{
-		APPLE,
-		BANANA,
-		CANAPLE,
+		wheel,
+		car,
+		man,
+		cat,
+		bird,
 		tree
 	}
 	
@@ -26,16 +28,47 @@ public class OutComeBehaviour : MonoBehaviour {
 		string choice = gameObject.name;
 		switch(choice)
 		{ 
-		case "APPLE":
+		case "wheel":
+			wheel ();
 			break;
-		case "BANANA":
+		case "car":
+			car ();
 			break;
-		case "CANAPLE":
+		case "man":
+			man ();
+			break;
+		case "cat":
+			cat ();
+			break;
+		case "bird":
+			bird ();
 			break;
 		case "tree":
+			tree ();
 			break;
 		default:
 			break;
 		}
+	}
+	
+	void wheel()
+	{
+		print ("wheel");
+		Destroy(gameObject);
+	}
+	void car()
+	{
+	}
+	void man()
+	{
+	}
+	void cat()
+	{
+	}
+	void bird()
+	{
+	}
+	void tree()
+	{
 	}
 }
