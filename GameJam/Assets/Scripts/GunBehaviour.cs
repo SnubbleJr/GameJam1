@@ -6,7 +6,6 @@ public class GunBehaviour : MonoBehaviour {
 	public GameObject bullet;
 
 	private int safteyCatch;
-
 	private GameObject shooter;
 
 	void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info)
@@ -27,6 +26,8 @@ public class GunBehaviour : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		shooter = GameObject.FindGameObjectWithTag("shooter");
+		transform.parent = shooter.transform.Find("gunModel");
+		activateShooter();
 	}
 	
 	void OnGUI() {
@@ -35,10 +36,11 @@ public class GunBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		safteyCatch = shooter.GetComponent<ShooterBehaviour>().getSafety(); 
+
+	//safteyCatch = shooter.GetComponent<ShooterBehaviour>().getSafety(); 
 		if (networkView.isMine)
 		{
+			transform.localPosition = Vector3.zero;
 			InputMovement();
 		}
 		
@@ -66,18 +68,27 @@ public class GunBehaviour : MonoBehaviour {
 			{
 				if (hit.collider.gameObject.CompareTag("target"))
 				{
-					sendShot(hit.rigidbody);
+					sendShot(hit.collider.gameObject);
 				}
 			}
 		}
 	}
 
-	[RPC] void sendShot(Rigidbody victim)
+	void sendShot(GameObject victim)
 	{
-		victim.gameObject.SendMessage("Hit");
-		
+		victim.SendMessage("Hit");
+
+	}
+
+	[RPC] void activateShooter()
+	{
+		shooter.SendMessage("activate", true);
+
 		if (networkView.isMine)
-			networkView.RPC("sendShot", RPCMode.OthersBuffered, victim);
+		{
+			networkView.RPC("activateShooter", RPCMode.OthersBuffered);
+		}
+
 	}
 	
 }

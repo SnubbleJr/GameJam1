@@ -12,4 +12,21 @@ public class TargetBehaviour : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public void Hit ()
+	{
+		print ("I, the " + gameObject.name + ", has been hitted!");
+		OutCome();
+	}
+
+	[RPC] void OutCome()
+	{
+		gameObject.SendMessage("Activate");
+
+		if (networkView.isMine)
+		{
+			networkView.RPC("OutCome", RPCMode.OthersBuffered);
+		}
+	}
+
 }

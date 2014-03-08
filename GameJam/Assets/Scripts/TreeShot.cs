@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BulletBehaviour : MonoBehaviour {
+public class TreeShot : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
