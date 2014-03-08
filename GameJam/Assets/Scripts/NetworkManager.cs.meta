@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 9bc81c665eca4b0488de7ead029110dc
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - playerShooterPrefab: {fileID: 100000, guid: 8c5fc6572a31fd641acdf65f09032c44,
+      type: 2}
+  - playerGunPrefab: {fileID: 100000, guid: 8c5fc6572a31fd641acdf65f09032c44, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
