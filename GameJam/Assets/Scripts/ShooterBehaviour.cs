@@ -3,8 +3,10 @@ using System.Collections;
 
 public class ShooterBehaviour : MonoBehaviour {
 
-	private int safteyCatch;
+	private bool safteyCatch;
 	public Texture2D textureToDisplay;
+	public GameObject gunmodel;
+	private GameObject gun;
 
 	private bool activated = false;
 	private float lastSynchronizationTime = 0f;
@@ -41,11 +43,10 @@ public class ShooterBehaviour : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	void OnGUI() {
-		if (safteyCatch == 1)
+		if (safteyCatch)
 		{
 			if (networkView.isMine)
 			{
@@ -78,13 +79,13 @@ public class ShooterBehaviour : MonoBehaviour {
 	void InputMovement()
 	{	
 		GetComponent<MouseLook>().enabled = true;
-		if (Input.GetMouseButtonDown(0) && safteyCatch == 0)
+		if (Input.GetMouseButtonDown(0) &! safteyCatch)
 		{
 			fire();
 		}
 		if (Input.GetMouseButtonDown(1))
 		{
-			setSafety(++safteyCatch%2);
+			setSafety();
 		}
 	}
 
@@ -93,22 +94,34 @@ public class ShooterBehaviour : MonoBehaviour {
 		print("please fire!");
 	}
 
-	[RPC] void setSafety(int safteyValue)
+	[RPC] void setSafety()
 	{
-		safteyCatch = safteyValue;
+		safteyCatch = !safteyCatch;
+		gun.SendMessage("setSafety", safteyCatch);
 		
 		if (networkView.isMine)
-			networkView.RPC("setSafety", RPCMode.OthersBuffered, safteyCatch);
+		{
+			networkView.RPC("setSafety", RPCMode.OthersBuffered);
+		}
 	}
 	
-	public int getSafety()
+	public bool getSafety()
 	{
 		return safteyCatch;
 	}
 
-	public void activate(bool activation)
+	public void activate()
 	{
-		print("trying to act");
-		activated = activation;
+		activated = true;
+	}
+
+	public void setGun(GameObject gunOb)
+	{
+		gun = gunOb;
+	}
+
+	public void animateShot()
+	{
+		gunmodel.animation.Play();
 	}
 }

@@ -5,7 +5,7 @@ public class GunBehaviour : MonoBehaviour {
 
 	public GameObject bullet;
 
-	private int safteyCatch;
+	private bool safetyCatch;
 	private GameObject shooter;
 
 	void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info)
@@ -25,11 +25,20 @@ public class GunBehaviour : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		findShooter();
+
+	}
+
+
+	void findShooter()
+	{
 		shooter = GameObject.FindGameObjectWithTag("shooter");
 		transform.parent = shooter.transform.Find("gunModel");
-		activateShooter();
+		if (shooter != null)
+		{
+			activateShooter();
+		}
 	}
-	
 	void OnGUI() {
 
 	}
@@ -37,7 +46,6 @@ public class GunBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-	//safteyCatch = shooter.GetComponent<ShooterBehaviour>().getSafety(); 
 		if (networkView.isMine)
 		{
 			transform.localPosition = Vector3.zero;
@@ -48,7 +56,7 @@ public class GunBehaviour : MonoBehaviour {
 	
 	void InputMovement()
 	{	
-		if (Input.GetMouseButtonDown(0) && safteyCatch == 0)
+		if (Input.GetMouseButtonDown(0) &! safetyCatch)
 		{
 			fire(Input.mousePosition);
 		}
@@ -57,9 +65,9 @@ public class GunBehaviour : MonoBehaviour {
 	
 	void fire(Vector3 position)
 	{
-		if (safteyCatch == 0)
+		if (!safetyCatch)
 		{
-			print("BANG!");
+			cosmeticFire ();
 
 			Ray ray = camera.ScreenPointToRay(position);
 			RaycastHit hit;
@@ -74,6 +82,19 @@ public class GunBehaviour : MonoBehaviour {
 		}
 	}
 
+	[RPC] void cosmeticFire()
+	{
+		print ("BANG!");
+		//audio.Play;
+		shooter.SendMessage("animateShot");
+
+		if (networkView.isMine)
+		{
+			networkView.RPC("cosmeticFire", RPCMode.OthersBuffered);
+		}
+		
+	}
+
 	void sendShot(GameObject victim)
 	{
 		victim.SendMessage("Hit");
@@ -82,13 +103,19 @@ public class GunBehaviour : MonoBehaviour {
 
 	[RPC] void activateShooter()
 	{
-		shooter.SendMessage("activate", true);
+		shooter.SendMessage("activate");
+		shooter.SendMessage("setGun", gameObject);
 
 		if (networkView.isMine)
 		{
 			networkView.RPC("activateShooter", RPCMode.OthersBuffered);
 		}
 
+	}
+
+	public void setSafety()
+	{
+		safetyCatch = !safetyCatch;
 	}
 	
 }

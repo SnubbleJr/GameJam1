@@ -15,7 +15,6 @@ public class TargetBehaviour : MonoBehaviour {
 
 	public void Hit ()
 	{
-		print ("I, the " + gameObject.name + ", has been hitted!");
 		OutCome();
 	}
 
