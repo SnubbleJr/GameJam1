@@ -106,6 +106,7 @@ public class GunBehaviour : MonoBehaviour {
 
 	[RPC] void activateShooter()
 	{
+		print (shooter);
 		shooter.SendMessage("activate");
 		shooter.SendMessage("setGun", gameObject);
 

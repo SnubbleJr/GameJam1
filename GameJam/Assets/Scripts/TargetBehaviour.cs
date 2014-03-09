@@ -22,6 +22,8 @@ public class TargetBehaviour : MonoBehaviour {
 	{
 		gameObject.SendMessage("Activate");
 
+		print("I have been hit!");
+
 		if (networkView.isMine)
 		{
 			networkView.RPC("OutCome", RPCMode.OthersBuffered);
