@@ -11,7 +11,6 @@ public class ClonePersonBehaviourScript : MonoBehaviour {
 	void Start () {
 
 		PaintableClothes.renderer.material.color = color;
-		//AI script
 
 	}
 	

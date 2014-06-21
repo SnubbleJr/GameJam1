@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\GunBehaviour.cs" />
      <Compile Include="Assets\Scripts\NetworkManager.cs" />
      <Compile Include="Assets\Scripts\OutComeBehaviour.cs" />
+     <Compile Include="Assets\Scripts\PatrolBehavior.cs" />
      <Compile Include="Assets\Scripts\PersonBehaviour.cs" />
      <Compile Include="Assets\Scripts\PersonManagerBehaviour.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
@@ -60,6 +61,7 @@
      <Compile Include="Assets\Scripts\ShooterBehaviour.cs" />
      <Compile Include="Assets\Scripts\TargetBehaviour.cs" />
      <Compile Include="Assets\Scripts\TreeShot.cs" />
+     <Compile Include="Assets\patrolRouterBehaviour.cs" />
      <None Include="Assets\Text Data\characteristics.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />

@@ -13,10 +13,6 @@ public class PersonBehaviour : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-		GameObject personManager = GameObject.FindGameObjectWithTag("personManager");
-
-		transform.parent = personManager.transform;
-
 		names = nameFile.text.Split('\n');
 		characteristics = charFile.text.Split('!');
 		countries = countryFile.text.Split('\n');

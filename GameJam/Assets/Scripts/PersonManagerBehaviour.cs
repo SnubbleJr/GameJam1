@@ -5,7 +5,7 @@ public class PersonManagerBehaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//SendMessage("spawnPerson");
+		BroadcastMessage("spawnPerson");
 	}
 	
 	// Update is called once per frame
