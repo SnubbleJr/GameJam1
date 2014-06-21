@@ -93,6 +93,8 @@ public class C_PlayerManager : MonoBehaviour {
                 Debug.LogError("Could not find BonusManager on client!!");
             }
 
+            Utils.getTopmostParent(gameObject).GetComponentInChildren<HudSpawner>().enabled = true;
+
             skyboxCamera = GameObject.FindWithTag("Skybox");
 			if (skyboxCamera == null)
             {

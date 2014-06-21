@@ -42,7 +42,7 @@ public class Utils
             {
                 if (man.getOwner() == player)
                 {
-                    return p;
+                    return p as GameObject;
                 }
             }
         }

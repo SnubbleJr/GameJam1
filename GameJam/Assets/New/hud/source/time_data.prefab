@@ -35,7 +35,7 @@ GUIText:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: 483:08
+  m_Text: 499:24
   m_Anchor: 2
   m_Alignment: 2
   m_PixelOffset: {x: -231, y: 187}

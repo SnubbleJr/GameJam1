@@ -10,8 +10,8 @@ public class PlayerHudManager : MonoBehaviour
 
     public int slot; //The slot number, the heighter, the further away from screen top
 
-    private float screenHeight = 0;
-    private float screenWidth = 0;
+    private float screenHeight = 0f;
+    private float screenWidth = 0f;
 
     private GameObject father; //The topmost element
 
@@ -25,7 +25,6 @@ public class PlayerHudManager : MonoBehaviour
             return;
         }
         father = Utils.findPlayer(Network.player);
-        print(father);
         bonusMan = father.GetComponentInChildren<C_BonusManager>();
         if (bonusMan == null)
         {
@@ -88,9 +87,8 @@ public class PlayerHudManager : MonoBehaviour
 
             //Set the headline
             Vector2 vect = text.pixelOffset;
-            vect.x = -((screenWidth / 2) - (backdrop.texture.width - 70));
-            vect.y = (screenHeight / 2) - ((backdrop.texture.height * slot) + 10 * slot) + (backdrop.texture.height - 5);
-            text.pixelOffset = vect;
+            text.pixelOffset.Set(-((screenWidth / 2) - (backdrop.texture.width - 70)), (screenHeight / 2) - ((backdrop.texture.height * slot) + 10 * slot) + (backdrop.texture.height - 5));
+            
 
             //Set the value
             vect.x = -((screenWidth / 2) - (backdrop.texture.width - 70));

@@ -47,26 +47,16 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Plugins\InconsistencyException.js" />
-     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js" />
-     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\FPSInputController.js" />
-     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\PlatformInputController.js" />
-     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.js" />
-     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" />
-     <Compile Include="Assets\Standard Assets\Particles\Legacy Particles\TimedObjectDestructor.js" />
-     <Compile Include="Assets\Standard Assets\Scripts\Camera Scripts\MouseOrbit.js" />
-     <Compile Include="Assets\Standard Assets\Scripts\Camera Scripts\SmoothFollow.js" />
-     <Compile Include="Assets\Standard Assets\Scripts\Camera Scripts\SmoothLookAt.js" />
-     <Compile Include="Assets\Standard Assets\Scripts\General Scripts\DragRigidbody.js" />
-     <None Include="Assets\Text Data\characteristics.txt" />
-     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
-     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
-     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
-     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
-     <None Include="Assets\Text Data\countries.txt" />
-     <None Include="Assets\Text Data\countryColours.txt" />
-     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />
-     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
-     <None Include="Assets\Text Data\names.txt" />
+     <None Include="Assets\StopFolder\Text Data\characteristics.txt" />
+     <None Include="Assets\StopFolder\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
+     <None Include="Assets\StopFolder\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\StopFolder\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\StopFolder\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
+     <None Include="Assets\StopFolder\Text Data\countries.txt" />
+     <None Include="Assets\StopFolder\Text Data\countryColours.txt" />
+     <None Include="Assets\StopFolder\Standard Assets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />
+     <None Include="Assets\StopFolder\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
+     <None Include="Assets\StopFolder\Text Data\names.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -7,7 +7,7 @@ public class Camera : MonoBehaviour {
 	void Start () {
         if (Network.isClient)
         {
-            enabled = false;
+            gameObject.SetActive(false);
         }
 	}
 	
