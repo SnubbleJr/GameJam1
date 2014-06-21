@@ -1,8 +1,15 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="..\..\smartscarf\unity\smartscarf\Assets\drag.js">
     <Files>
       <File FileName="..\..\smartscarf\unity\smartscarf\Assets\drag.js" Line="22" Column="20" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\New\src\server\collectibles\BonusManager.cs">
+    <Files>
+      <File FileName="Assets\New\src\server\collectibles\BonusManager.cs" Line="1" Column="1" />
+>>>>>>> bb9812bdd25ffceeb4683f423850413a05dc9f4e
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
